@@ -1,0 +1,41 @@
+name: turyn_viajes
+description: A new Flutter project
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+#Dependencias de producción
+dependencies:
+  firebase_core: ^2.1.1
+  shared_preferences: 2.0.15
+  intl: ^0.17.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^4.1.0
+  firebase_core_platform_interface: ^4.5.1
+
+#Dependencias de desarrollo
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  assets:
+    - assets/images/
+
+  # the material Icons class.
+  uses-material-design: true

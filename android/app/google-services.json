@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641805303524",
+    "project_id": "turyn-viajes",
+    "storage_bucket": "turyn-viajes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641805303524:android:eb204c1fb916be092f36f1",
+        "android_client_info": {
+          "package_name": "com.turyn_viajes.turyn_viajes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641805303524-4c8vit66v7p9kqdddv8nh01lvin6f1b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDarlqJjHnjT-leNM5GKlbshsdkhxQttHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641805303524-4c8vit66v7p9kqdddv8nh01lvin6f1b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
