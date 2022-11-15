@@ -3,11 +3,9 @@ class User {
   var _email;
   var _password;
   var _genre;
-  var _favoritesGenres;
   var _bornDate;
 
-  User(this._name, this._email, this._password, this._genre,
-      this._favoritesGenres, this._bornDate);
+  User(this._name, this._email, this._password, this._genre, this._bornDate);
 
   User.Empty();
 
@@ -16,7 +14,6 @@ class User {
         _email = json['email'],
         _password = json['password'],
         _genre = json['genre'],
-        _favoritesGenres = json['favoritesGenres'],
         _bornDate = json['bornDate'];
 
   Map<String, dynamic> toJson() => {
@@ -24,7 +21,6 @@ class User {
         'email': _email,
         'password': _password,
         'genre': _genre,
-        'favoritesGenres': _favoritesGenres,
         'bornDate': _bornDate,
       };
 
@@ -40,12 +36,6 @@ class User {
 
   set bornDate(value) {
     _bornDate = value;
-  }
-
-  get favoritesGenres => _favoritesGenres;
-
-  set favoritesGenres(value) {
-    _favoritesGenres = value;
   }
 
   get genre => _genre;

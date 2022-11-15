@@ -22,11 +22,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   final _repPassword = TextEditingController();
-  String _data = "Información: ";
+  //String _data = "Información: ";
   Genre? _genre = Genre.masculino;
-  bool _aventura = false;
-  bool _fantacia = false;
-  bool _terror = false;
   String buttonMsg = "fecha de nacimiento";
 
   String _date = "";
@@ -85,13 +82,9 @@ class _RegisterPageState extends State<RegisterPage> {
           genre = "Femenino";
         }
 
-        if (_aventura) favoritos = "$favoritos Aventira";
-        if (_fantacia) favoritos = "$favoritos Fantacia";
-        if (_terror) favoritos = "$favoritos Terror";
-
         //guardamos en base de datos en user
-        var user = User(
-            _name.text, _email.text, _password.text, genre, favoritos, _date);
+        var user =
+            User(_name.text, _email.text, _password.text, genre, favoritos);
         saveUser(user);
         //me traslada a la pagina de login
         Navigator.pushReplacement(
@@ -186,40 +179,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ],
-                ),
-                const Text(
-                  'Generos Favoritos',
-                  style: TextStyle(fontSize: 20),
-                ),
-                CheckboxListTile(
-                  title: const Text('Aventura'),
-                  value: _aventura,
-                  selected: _aventura,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _aventura = value!;
-                    });
-                  },
-                ),
-                CheckboxListTile(
-                  title: const Text('Fantacia'),
-                  value: _fantacia,
-                  selected: _fantacia,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _fantacia = value!;
-                    });
-                  },
-                ),
-                CheckboxListTile(
-                  title: const Text('Terror'),
-                  value: _terror,
-                  selected: _terror,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _terror = value!;
-                    });
-                  },
                 ),
                 const SizedBox(
                   height: 16.0,
