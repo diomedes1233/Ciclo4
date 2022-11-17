@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:turyn_viajes/pages/perfilsitios.dart';
+import 'package:turyn_viajes/pages/register_place.dart';
 
 import 'menu_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final id;
+  final name;
+  const HomePage(this.id, this.name, {Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -18,14 +22,16 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                //Navigator.push(context,
-                //MaterialPageRoute(builder: (context) => PaseadoresPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PerfilSitios(widget.id)));
               },
               icon: const Icon(Icons.accessibility_rounded,
                   size: 30, color: Colors.white))
         ],
       ),
-      drawer: MenuPage(),
+      drawer: MenuPage(widget.name),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
         child: SingleChildScrollView(
@@ -87,6 +93,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add, size: 30, color: Colors.white),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const RegisterPlace()));
+        },
+      ),
+      bottomNavigationBar: const menuInferior(),
     );
   }
 }

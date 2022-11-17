@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:turyn_viajes/models/user.dart' as UserApp;
 
+import '../models/user.dart';
+
 class FirebaseApi {
   Future<String?> registerUser(String email, String password) async {
     try {
@@ -32,7 +34,7 @@ class FirebaseApi {
     }
   }
 
-  Future<String> createUser(UserApp.User user) async {
+  Future<String> createUser(Usuar user) async {
     try {
       final documento = await FirebaseFirestore.instance
           .collection("users")

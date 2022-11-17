@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:turyn_viajes/pages/home_page.dart';
 import 'package:turyn_viajes/pages/login_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class MenuPage extends StatelessWidget {
+import 'favoritos_page.dart';
+
+class MenuPage extends StatefulWidget {
+  final name;
+
+  const MenuPage(this.name, {Key? key}) : super(key: key);
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -45,6 +57,40 @@ class MenuPage extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class menuInferior extends StatelessWidget {
+  const menuInferior({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      backgroundColor: Colors.blue,
+      selectedItemColor: Colors.orange,
+      unselectedItemColor: Colors.white,
+      items: const [
+        BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.dog, size: 30), label: "Mis Mascotas"),
+        BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.personWalking, size: 30),
+            label: "Paseadores"),
+        BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.heart, size: 30), label: "Favoritos")
+      ],
+      onTap: (indice) {
+        if (indice == 0) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (contetx) => const HomePage("", "")));
+        } else if (indice == 1) {
+          //Navigator.push(context,
+          //MaterialPageRoute(builder: (contetx) => const PaseadoresPage()));
+        } else {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (contetx) => const FavoritosPage()));
+        }
+      },
     );
   }
 }
