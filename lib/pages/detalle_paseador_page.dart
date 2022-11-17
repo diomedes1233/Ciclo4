@@ -6,6 +6,7 @@ import 'package:turyn_viajes/models/paseadores_local.dart';
 import 'package:turyn_viajes/pages/home_page.dart';
 import '../repository/Boxes.dart';
 
+//prueba
 class DetallePaseador extends StatefulWidget {
   final datosPaseador paseador;
 
