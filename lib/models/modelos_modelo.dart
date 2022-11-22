@@ -1,11 +1,21 @@
-class datosPaseador {
-  String id = "";
-  String nombre = "";
-  String ciudad = "";
-  String contacto = "";
-  String foto = "";
-  String perfil = "";
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-  datosPaseador(
-      this.id, this.nombre, this.ciudad, this.contacto, this.foto, this.perfil);
+class datosSitios {
+  String id = "";
+  String name = "";
+  String phone = "";
+  String images = "";
+  String ciudad = "";
+  String departamet = "";
+  late GeoPoint location;
+
+  datosSitios(
+    this.id,
+    this.name,
+    this.phone,
+    this.images,
+    this.ciudad,
+    this.departamet,
+    this.location,
+  );
 }

@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'drawablemenu.dart';
-import 'listasitios.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'sitios_interes.dart';
+import 'menu_page.dart';
 
 class PerfilSitios extends StatefulWidget {
   final id;
   const PerfilSitios(this.id, {Key? key}) : super(key: key);
+
+  get name => null;
 
   @override
   State<PerfilSitios> createState() => _PerfilSitiosState();
@@ -18,9 +22,20 @@ class _PerfilSitiosState extends State<PerfilSitios> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Lista de Sitios'),
+          title: const Text("Lista Sitios"),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PerfilSitios(widget.id)));
+              },
+              icon: const Icon(FontAwesomeIcons.personWalking, size: 30),
+            )
+          ],
         ),
-        // drawer: DrawableMenu(),
+        drawer: MenuPage(widget.name),
         body: Padding(
           padding: EdgeInsets.all(5),
           child: StreamBuilder<QuerySnapshot>(
@@ -89,6 +104,7 @@ class _PerfilSitiosState extends State<PerfilSitios> {
             },
           ),
         ),
+        bottomNavigationBar: const menuInferior(),
       ),
     );
   }

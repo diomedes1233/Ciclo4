@@ -1,11 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:turyn_viajes/main.dart';
-import 'drawablemenu.dart';
+
+import 'Lista_sitios_pages.dart';
+import 'menu_page.dart';
 
 class ListaSitios extends StatefulWidget {
-  final dk;
-  const ListaSitios(this.dk, {Key? key}) : super(key: key);
+  final id;
+  const ListaSitios(this.id, {Key? key}) : super(key: key);
+
+  get name => null;
 
   @override
   State<ListaSitios> createState() => _ListaSitiosState();
@@ -14,26 +19,24 @@ class ListaSitios extends StatefulWidget {
 class _ListaSitiosState extends State<ListaSitios> {
   @override
   Widget build(BuildContext context) {
-    var k = widget.dk; // leo variable de otro widget
+    var k = widget.id; // leo variable de otro widget
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Sitios de Interes'),
-          elevation: 10,
-          actions: <Widget>[
+          title: const Text("Sitios de Interes"),
+          actions: [
             IconButton(
-              icon: Icon(Icons.home),
-              tooltip: 'Ir al Home',
               onPressed: () {
-                // para redirigir
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => MyApp()));
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(content: Text('This is a snackbar')));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PerfilSitios(widget.id)));
               },
-            ),
+              icon: const Icon(FontAwesomeIcons.personWalking, size: 30),
+            )
           ],
         ),
+        drawer: MenuPage(widget.name),
         // drawer: DrawableMenu(),
         body: Padding(
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,6 +87,7 @@ class _ListaSitiosState extends State<ListaSitios> {
           ),
           // ],
         ),
+        bottomNavigationBar: const menuInferior(),
       ),
     );
   }

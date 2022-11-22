@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:turyn_viajes/pages/perfilsitios.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:turyn_viajes/pages/Lista_sitios_pages.dart';
 import 'package:turyn_viajes/pages/register_place.dart';
 
 import 'menu_page.dart';
@@ -21,14 +22,14 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Tures y Viajes"),
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => PerfilSitios(widget.id)));
-              },
-              icon: const Icon(Icons.accessibility_rounded,
-                  size: 30, color: Colors.white))
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PerfilSitios(widget.id)));
+            },
+            icon: const Icon(FontAwesomeIcons.personWalking, size: 30),
+          )
         ],
       ),
       drawer: MenuPage(widget.name),

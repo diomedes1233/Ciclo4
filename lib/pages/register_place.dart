@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turyn_viajes/pages/perfilsitios.dart';
+import 'package:turyn_viajes/pages/Lista_sitios_pages.dart';
 import '../models/user.dart';
 import '../repository/firebase_api.dart';
 import 'login_page.dart';

@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:turyn_viajes/main.dart';
-import 'package:turyn_viajes/pages/perfilsitios.dart';
+import 'package:turyn_viajes/pages/Lista_sitios_pages.dart';
 import 'package:turyn_viajes/pages/register_page.dart';
 
 import '../models/user.dart';

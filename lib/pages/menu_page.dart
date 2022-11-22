@@ -3,8 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:turyn_viajes/pages/home_page.dart';
 import 'package:turyn_viajes/pages/login_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'favoritos_page.dart';
+import 'Lista_sitios_pages.dart';
 
 class MenuPage extends StatefulWidget {
   final name;
@@ -72,10 +71,10 @@ class menuInferior extends StatelessWidget {
       unselectedItemColor: Colors.white,
       items: const [
         BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.dog, size: 30), label: "Mis Mascotas"),
+            icon: Icon(FontAwesomeIcons.house, size: 30), label: "Principal"),
         BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.personWalking, size: 30),
-            label: "Paseadores"),
+            label: "Sitios"),
         BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.heart, size: 30), label: "Favoritos")
       ],
@@ -84,11 +83,12 @@ class menuInferior extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (contetx) => const HomePage("", "")));
         } else if (indice == 1) {
-          //Navigator.push(context,
-          //MaterialPageRoute(builder: (contetx) => const PaseadoresPage()));
-        } else {
+          var widget;
           Navigator.push(context,
-              MaterialPageRoute(builder: (contetx) => const FavoritosPage()));
+              MaterialPageRoute(builder: (contetx) => PerfilSitios(widget)));
+        } else {
+          // Navigator.push(context,
+          //MaterialPageRoute(builder: (contetx) => FavoritosPage()));
         }
       },
     );
